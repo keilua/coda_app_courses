@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "Fool";
+  src: url(../public/assets/fonts/Fool.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monogram Extended";
+  src: url(../public/assets/fonts/monogram-extended.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Salmon Typewriter Regular";
+  src: url(../public/assets/fonts/Salmon-Typewriter-Regular.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Salmon Typewriter Bold";
+  src: url(../public/assets/fonts/Salmon-Typewriter-Bold.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ThaleahFat";
+  src: url(../public/assets/fonts/ThaleahFat.ttf) format('truetype');
+  font-display: swap;
+}
+
+:root {
+  /* Colors */
+  --background-light: #f8eee1;
+  --background-mid: #e8caae;
+  --background-dark: #dfbb9a;
+  --text-color: #583e3e;
+  --text-light: #fff;
+  --primary-color: #5f76ce;
+  --primary-hover: #3c508e;
+  --error-color: #b92227;
+  --error-hover: #91181a;
+  --success-color: #50a22e;
+  --success-hover: #36621d;
+  --warning-color: #f2801c;
+  --warning-hover: #d36709;
+  
+  /* Fonts */
+  --font-main: "ThaleahFat", system-ui, sans-serif;
+  --font-title: "ThaleahFat", system-ui, sans-serif;
+  --font-ui: "Salmon Typewriter Regular", system-ui, sans-serif;
+  --font-size-base: 16px;
+  --font-size-large: 20px;
+  --font-size-small: 14px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-small: 0.5rem;
+  --spacing-regular: 1rem;
+  --spacing-large: 2rem;
+  --border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+}
+
+body {
+  background: var(--background-light);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: var(--font-weight-bold);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button {
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: var(--spacing-small) var(--spacing-regular);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+/* Position du bouton de retour */
+.back-button {
+  position: fixed;
+  top: var(--spacing-small);
+  left: var(--spacing-small);
+  background: var(--warning-color);
+  padding: var(--spacing-small) var(--spacing-regular);
+  border-radius: var(--border-radius);
+  z-index: 1000;
+}
+
+.back-button:hover {
+  background: var(--warning-hover);
+}
+
+/* Form Styling */
+form {
+  max-width: 500px;
+  margin: var(--spacing-large) auto;
+  background: var(--background-mid);
+  padding: var(--spacing-regular);
+  border-radius: var(--border-radius);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: var(--font-weight-bold);
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: var(--spacing-small);
+  border: 1px solid var(--background-dark);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-small);
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+/* Bouton dans le formulaire */
+form button[type="submit"] {
+  width: 100%;
+  margin-top: var(--spacing-regular);
+  background: var(--success-color);
+}
+
+form button[type="submit"]:hover {
+  background: var(--success-hover);
+}
+
+/* Liste des courses */
+.course-list {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-regular);
+}
+
+.course-item {
+  background: var(--background-mid);
+  padding: var(--spacing-regular);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-item h3 {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .back-button {
+    font-size: var(--font-size-small);
+    padding: var(--spacing-small);
+  }
+}
