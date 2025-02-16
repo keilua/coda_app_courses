@@ -1,4 +1,4 @@
-# Welcome to app course!
+# Welcome to app course by Keanu RICHARD!
 
 ## Features
 crud des courses 
